@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Base styles */
+body {
+  @apply bg-slate-950 text-slate-200 antialiased;
+  background: radial-gradient(circle at center, #1e293b 0%, #020617 100%);
+  min-height: 100vh;
+}
+
+/* Remove default margins */
+body, h1, h2, h3, h4, h5, h6, p {
+  @apply m-0;
+}
+
+/* Custom glassmorphism utility class */
+@layer components {
+  .glassmorphism {
+    @apply backdrop-blur-md bg-white/10 border border-white/20 rounded-lg;
+  }
+
+  /* Enhanced glow effect for cards */
+  .card-glow {
+    @apply shadow-glow transition-all duration-300 hover:shadow-lg;
+  }
+}
+
+/* Utility for no scrollbar */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Focus styles for accessibility */
+a:focus,
+button:focus,
+input:focus {
+  @apply outline-none ring-2 ring-brand-cyan ring-offset-2 ring-offset-slate-950;
+}
+
+/* Link hover effects */
+a {
+  @apply transition-colors duration-200;
+}
+
+/* Selection color */
+::selection {
+  @apply bg-brand-cyan text-slate-950;
+}
